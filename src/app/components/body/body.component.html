@@ -1,0 +1,54 @@
+<div class="row mt-5">
+
+    <div class="col">
+        <h5>Asignación Pendiente</h5>
+        <hr>
+        <div *ngIf="mostrar" class="card text-white bg-primary mb-3" style="max-width: 100%;">
+            <div class="card-body">
+                <h5 class="card-title">Success card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                <mat-form-field class="example-full-width mt-2">
+                    <mat-label>Elija fecha</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker">
+                        <!-- <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon> -->
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <div class="btn-group ml-3">
+                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Encargado
+                    </button>
+                    <div class="dropdown-menu">
+                        <a *ngFor="let encargado of desarrolladores" class="dropdown-item" href="#">{{ encargado }}</a>
+
+                    </div>
+                </div>
+
+                <button class="btn btn-success btn-block">
+                    Agregar
+                </button>
+
+            </div>
+        </div>
+        <button (click)="mostrar = !mostrar" class="btn btn-outline-success btn-block">
+            Mostrar/Ocultar
+        </button>
+
+    </div>
+
+    <div class="col">
+        <h5>Asignadas</h5>
+        <hr>
+        <ul class="list-group">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+    </div>
+
+</div>
